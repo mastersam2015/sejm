@@ -1,0 +1,63 @@
+<script type="text/javascript" src="jquery.js"></script>
+
+<body bgcolor="ffffff" style="cursor: none;" >
+<audio id="myAudio">
+
+  <source src="2.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+<script>
+var x = document.getElementById("myAudio"); 
+
+function playAudio() { 
+    x.play(); 
+
+} 
+
+function pauseAudio() { 
+    x.pause(); 
+} 
+</script>
+<audio id="myAudio">
+
+  <source src="1.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<img src="zdjecie2.png"  style="position:absolute;">
+<canvas id="viewport" width="1000" height="1000" style="position:absolute;" onclick="playAudio();plama();"></canvas>
+<img src="shotgun.png" id="shot" style="position:absolute;">
+<img src="plama.png" id="plama" style="display:none;">
+
+<script>
+var canvas = document.getElementById('viewport'),
+context = canvas.getContext('2d');
+
+$(document).mousemove(function(event){
+
+
+    $("#shot").css("margin-left", event.pageX);
+	$("#shot").css("margin-top", event.pageY);
+	
+}); 
+function plama(){
+
+
+
+
+
+  base_image = new Image();
+  base_image.src = 'plama.png';
+  
+    context.drawImage(base_image, event.pageX, event.pageY);
+  
+
+
+
+//$("#plama").show();
+  //  $("#plama").css("margin-left", event.pageX);
+	//$("#plama").css("margin-top", event.pageY);
+	
+}
+</script>
